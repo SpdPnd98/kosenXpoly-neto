@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sp.neto">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/neto_logo_small"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/neto_logo_small"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".neto" />
+        <activity android:name=".login" />
+        <activity android:name=".signUp" />
+        <activity
+            android:name=".splashScreen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+
+                <!-- Below generates the App icon in drawer -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".termsAndConditions" />
+        <!-- <activity android:name=".readWriteUserDetails"></activity> -->
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".netoMainMap"
+            android:label="@string/title_activity_neto_main_map" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".addLocationDetails" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.sp.neto.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <receiver android:name=".readWriteUserDetails">
+            <intent-filter>
+                <action android:name="com.sp.neto.netoMainMap.USER_ACTION" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <activity android:name=".viewProfile" />
+        <activity android:name=".allCases" />
+        <activity android:name=".EditProfile" />
+        <activity android:name=".viewCase" />
+        <activity android:name=".chatRoom"></activity>
+        <!--<service android:name=".GeofenceTransitionsIntentService"/>-->
+    </application>
+
+</manifest>

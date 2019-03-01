@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574b</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="celadon">#c5e0b4</color>
+    <color name="darkSeaGreen">#90c290</color>
+    <color name="polishedPine">#68a691</color>
+    <color name="darkGreen">#053225</color>
+    <color name="roseMadder">#df2935</color>
+    <color name="calPolyPomonaGreen">#26532B</color>
+</resources>
